@@ -1,13 +1,10 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {
-    Container, DealContainer, DealInfo, DealTitle, FirstContainerImage, FlexDealsContainer,
-    FourthContainerImage,
+    Container, DealContainer, DealInfo, DealTitle, ContainerImage, FlexDealsContainer,
     InfoContainer,
     InfoDescContainer,
     InfoPriceContainer, InfoSoldContainer, InfoYieldContainer,
-    SecondContainerImage,
-    ThirdContainerImage,
     Title
 } from './styles';
 import {citySelector} from "../../store/city/city.selector";
@@ -37,7 +34,7 @@ function OpenDeals() {
                 {
                     city.isLoading ? <h1>Loading...</h1> : city.cities.map(
                         (city : any) => (<DealContainer>
-                            <FirstContainerImage city={city.img}>
+                            <ContainerImage city={city.img}>
                                 <InfoContainer>
                                     <DealTitle>{city.title}</DealTitle>
                                     <InfoDescContainer>
@@ -54,7 +51,7 @@ function OpenDeals() {
                                         </InfoSoldContainer>
                                     </InfoDescContainer>
                                 </InfoContainer>
-                            </FirstContainerImage>
+                            </ContainerImage>
                         </DealContainer>)
                     )
                 }

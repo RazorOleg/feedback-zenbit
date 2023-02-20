@@ -1,10 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import {NavLink, useNavigate} from "react-router-dom";
-import {AuthForgotPasswordLink, AuthForm, AuthFullNameTitle, AuthInput,
-    AuthLinkToLogin, AuthLogin, AuthSendButton, ContainerForm, Input, SignUpLink } from './styles';
+import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {useForm} from "react-hook-form";
+import {AuthForgotPasswordLink, AuthForm, AuthFullNameTitle, AuthInput,
+    AuthLinkToLogin, AuthLogin, AuthSendButton, ContainerForm, Input, SignUpLink } from './styles';
 import {yupResolver} from "@hookform/resolvers/yup";
 import {signInSchema} from "../../common/schemas";
 import {signInQuery} from "../../store/auth/sign-in/sign-in.slice";
@@ -17,8 +17,8 @@ function SignInForm() {
     const { t } = useTranslation();
     const {
         handleSubmit,
-        formState: { errors, isValid },
-        control, setValue
+        formState: { errors },
+        setValue
     } = useForm<any>({
         mode: 'onChange',
         defaultValues: {
@@ -67,11 +67,11 @@ function SignInForm() {
                     {checkErrors(errors, "password")}
                 </>
             </AuthInput>
-            <AuthForgotPasswordLink to={"forgot-password"}> {t("Auth.forgotPassword")} </AuthForgotPasswordLink>
+            <AuthForgotPasswordLink> {t("Auth.forgotPassword")} </AuthForgotPasswordLink>
             <AuthSendButton value={t("Auth.signIn").toString()} type="submit" />
             <AuthLinkToLogin>
                 {t("Auth.haventAnAccount")}
-                <SignUpLink to={"sign-up"}>{t("Auth.signUp")}</SignUpLink>
+                <SignUpLink to={"/sign-up"}>{t("Auth.signUp")}</SignUpLink>
             </AuthLinkToLogin>
             </form>
         </AuthForm>

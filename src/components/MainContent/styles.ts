@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import city from "../../assets/mainCity.jpg";
+import {NavLink} from "react-router-dom";
 
 export const Container = styled.div`
   width: 100%;
@@ -38,13 +39,14 @@ export const MainContentMessage = styled.h2`
   padding: 20px 0px;
   margin: 0px;
 `
-export const MainContentButton = styled.button`
+export const MainContentButton = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 160px;
   height: 54px;
-
+  
+  text-decoration: none;
   border: 1px solid #FFFFFF;
   border-radius: 8px;
   font-family: 'Merriweather', serif;

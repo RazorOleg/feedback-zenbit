@@ -46,7 +46,7 @@ export const AuthFullNameTitle = styled.div`
     padding-top: 20px;
 `
 
-export const AuthForgotPasswordLink = styled(NavLink)`
+export const AuthForgotPasswordLink = styled.div`
     text-align: right;
     padding-top: 10px;
     font-family: 'Lato', sans-serif;
@@ -58,7 +58,7 @@ export const AuthForgotPasswordLink = styled(NavLink)`
     text-decoration: none;
 `
 
-export const    AuthSendButton = styled.input`
+export const AuthSendButton = styled.input`
   :disabled {
     background: gray;
     color: black;

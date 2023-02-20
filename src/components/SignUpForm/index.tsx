@@ -1,15 +1,14 @@
 import React, {useEffect} from 'react';
 import { useTranslation } from 'react-i18next';
 import {NavLink, useNavigate} from "react-router-dom";
-import {AuthForm, AuthFullNameTitle, AuthInput,
-    AuthLinkToLogin, AuthLogin, AuthSendButton, ContainerForm, Input, SignInLink, Error } from './styles';
 import {useDispatch} from "react-redux";
 import {useForm} from "react-hook-form";
+import {toast, ToastContainer} from 'react-toastify';
+import {AuthForm, AuthFullNameTitle, AuthInput,
+    AuthLinkToLogin, AuthLogin, AuthSendButton, ContainerForm, Input, SignInLink, Error } from './styles';
 import {yupResolver} from "@hookform/resolvers/yup";
 import {signUpSchema} from "../../common/schemas";
 import {signUpQuery} from "../../store/auth/sing-up/sign-up.slice";
-import {LoginLink} from "../Header/styles";
-import {toast, ToastContainer} from 'react-toastify';
 
 function SignUpForm() {
     const dispatch = useDispatch();
@@ -18,8 +17,8 @@ function SignUpForm() {
     const {
         register,
         handleSubmit,
-        formState: { errors, isValid },
-        control, setValue
+        formState: { errors },
+        setValue
     } = useForm<any>({
         mode: 'onChange',
         defaultValues: {
