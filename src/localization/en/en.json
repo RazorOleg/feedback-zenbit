@@ -1,0 +1,61 @@
+{
+  "Choose": {
+    "language": "Choose Language",
+    "type": "Choose Type",
+    "numberOfLessonsTitle": "Number of lessons",
+    "previous": "Previous step",
+    "button": "Choose",
+    "english": "English",
+    "spanish": "Spanish",
+    "french": "French",
+    "individual": "Individual",
+    "corporate": "Corporate",
+    "numberOfLessons": {
+      "1": "1 lesson",
+      "5": "5 lessons",
+      "10": "10 lessons",
+      "20": "20 lessons"
+    }
+  },
+  "Header": {
+    "logo": "My Logo"
+  },
+  "Auth": {
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "logIn": "Log In",
+    "logOut": "Log Out",
+    "loginTitle": "Login",
+    "registration": "Registration",
+    "forgotPassword": "Forgot password?",
+    "forgotPasswordTitle": "Forgot Password",
+    "resetPassword": "Reset Password",
+    "haventAnAccount": "Don’t  have an account? ",
+
+    "google": "Google",
+    "facebook": "Facebook",
+    "or": "Or",
+    "fullName": "Full Name",
+    "email": "Email",
+    "enterEmail": "Enter your email address",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "privacyPolicy": {
+      "firstPartPrivacyPolicy": "By creating an account you agree to the ",
+      "secondPartPrivacyPolicy": " and our ",
+      "termOfUse": "terms of use",
+      "privacyPolicy": "privacy policy."
+    },
+    "alreadyExistText": "Already have an account? ",
+    "createAccount": "Create account",
+    "continue": "Continue"
+  },
+  "Categories": {
+    "dashboard": "Dashboard",
+    "payments": "Payments",
+    "schedule": "Schedule",
+    "booking": "Book Lesson",
+    "messages": "Messages",
+    "notification": "Notification"
+  }
+}
