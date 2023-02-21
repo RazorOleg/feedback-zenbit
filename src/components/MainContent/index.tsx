@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container, ContainerImage, MainContentButton, MainContentMessage, MainContentTitle} from './styles';
+import {t} from "i18next";
 
 export default function MainContent() {
     return (
@@ -9,7 +10,7 @@ export default function MainContent() {
             <MainContentMessage>Numerous calculations predict, and experiments confirm, that the force field reflects the beam, while
                 the mass defect is not formed. The chemical compound is negatively charged. Twhile the mass defect is
             </MainContentMessage>
-            <MainContentButton>Get Started</MainContentButton>
+            <MainContentButton to={"/sign-in"}>{t("Auth.getStarted")}</MainContentButton>
             </ContainerImage>
         </Container>
     );

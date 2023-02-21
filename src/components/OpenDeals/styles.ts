@@ -32,31 +32,13 @@ export const DealContainer = styled.div`
     margin-bottom: 20px; //ask  
 `
 
-export const FirstContainerImage = styled.div<{city : string}>`
+export const ContainerImage = styled.div<{city : string}>`
     background-image: url(${props => props.city});
     background-size: cover;
     height: 100%;
     border-radius: 5px;
 `
 
-export const SecondContainerImage = styled.div`
-    background-image: url(${secondDeal});
-    background-size: cover;
-    height: 100%;
-    border-radius: 5px;
-`
-export const ThirdContainerImage = styled.div`
-    background-image: url(${thirdDeal});
-    background-size: cover;
-    height: 100%;
-    border-radius: 5px;
-`
-export const FourthContainerImage = styled.div`
-    background-image: url(${fourthDeal});
-    background-size: cover;
-    height: 100%;
-    border-radius: 5px;
-`
 export const DealTitle = styled.div`
     font-family: 'Merriweather', serif;
     font-style: normal;
