@@ -8,10 +8,23 @@ export const ContainerForm = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+  @media (max-width: 992px) {
+    height: 92vh;
+  }
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
+  
 `
 
 export const AuthForm = styled.div`
     width: 50%;
+  
+   @media (max-width: 992px) {
+    width: 70%;
+  }
 `
 
 export const AuthInput = styled.div`
@@ -35,6 +48,19 @@ export const AuthLogin = styled.div`
     font-weight: 700;
     font-size: 28px;
     line-height: 34px;
+  
+
+  @media (max-width: 992px) {
+    font-size: 26px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 22px;
+  }
 `
 
 export const AuthFullNameTitle = styled.div`

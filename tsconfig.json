@@ -18,9 +18,23 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@store/*": ["store/*"],
+      "@common/*": ["common/*"],
+      "@signUpForm/*": ["components/SignUpForm/*"],
+      "@signInForm/*": ["components/SignInForm/*"],
+      "@auth/*": ["api/auth/*"],
+      "@city/*": ["api/city/*"],
+      "@api/*": ["api/*"],
+      "@content/*": ["components/Content/*"],
+      "@header/*": ["components/Header/*"],
+      "@mainContent/*": ["components/MainContent/*"],
+      "@openDeals/*": ["components/OpenDeals/*"]
+    }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

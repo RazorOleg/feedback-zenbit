@@ -8,10 +8,22 @@ export const ContainerForm = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+  @media (max-width: 992px) {
+    height: 92vh;
+  }
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
 `
 
 export const AuthForm = styled.div`
     width: 45%;
+
+  @media (max-width: 992px) {
+    width: 70%;
+  }
 `
 
 export const AuthInput = styled.div`
@@ -27,14 +39,27 @@ export const Input = styled.input`
     border-radius: 5px;
     height: 48px;
     background-color: #E0E0E0;
+    text-indent: 10px;
 `
 
-export const AuthLogin = styled.div`
+export const AuthRegistration = styled.div`
     font-family: 'Merriweather', serif;
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
     line-height: 34px;
+
+  @media (max-width: 992px) {
+    font-size: 26px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 22px;
+  }
 `
 
 export const AuthFullNameTitle = styled.div`

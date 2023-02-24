@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { authAPI, AuthSignInDto } from '../../../api/auth/auth.api';
+import { authAPI, AuthSignInDto } from '@auth/auth.api';
 
 export const signUpQuery: any = createAsyncThunk(
   'signUp/signUpQuery',
@@ -32,7 +32,7 @@ export const signUp = createSlice({
     },
     [signUpQuery.fulfilled.type]: (state, action) => {
       state.token = action.payload.accessToken;
-      console.log(action.payload.accessToken, "action.payload.accessToken");
+
       localStorage.setItem('token', JSON.stringify(state.token));
       state.error = null;
       state.isLoading = false;

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { authAPI, AuthSignInDto } from '../../../api/auth/auth.api';
+import { authAPI, AuthSignInDto } from '@auth/auth.api';
 
 export const signInQuery: any = createAsyncThunk(
   'signIn/signInQuery',

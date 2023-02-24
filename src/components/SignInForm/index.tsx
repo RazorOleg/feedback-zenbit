@@ -2,14 +2,15 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {useForm} from "react-hook-form";
+import {FieldErrors, useForm} from "react-hook-form";
 import {AuthForgotPasswordLink, AuthForm, AuthFullNameTitle, AuthInput,
-    AuthLinkToLogin, AuthLogin, AuthSendButton, ContainerForm, Input, SignUpLink } from './styles';
+    AuthLinkToLogin, AuthLogin, AuthSendButton, ContainerForm, Input, SignUpLink } from '@signInForm/styles';
 import {yupResolver} from "@hookform/resolvers/yup";
-import {signInSchema} from "../../common/schemas";
-import {signInQuery} from "../../store/auth/sign-in/sign-in.slice";
-import {Error} from "../SignUpForm/styles";
+import {signInSchema} from "@common/schemas";
+import {signInQuery} from "@store/auth/sign-in/sign-in.slice";
+import {Error} from "@signUpForm/styles";
 import {toast, ToastContainer} from "react-toastify";
+import {IResponse, ISignIn} from "@signInForm/type";
 
 function SignInForm() {
     const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function SignInForm() {
         handleSubmit,
         formState: { errors },
         setValue
-    } = useForm<any>({
+    } = useForm<ISignIn>({
         mode: 'onChange',
         defaultValues: {
             email: '',
@@ -28,8 +29,8 @@ function SignInForm() {
         resolver: yupResolver(signInSchema),
     });
 
-    const onSubmit = (data: any) => {
-        dispatch(signInQuery(data as any)).then((res: any) => {
+    const onSubmit = (data: ISignIn) => {
+        dispatch(signInQuery(data as ISignIn)).then((res: IResponse) => {
             if (!res.error){
                 navigate('/');
             }
@@ -41,8 +42,8 @@ function SignInForm() {
         });
     };
 
-    const checkErrors = (errors : any, input : any) => {
-        return errors && errors[input]?.message && <Error>{errors[input]?.message.toString()}</Error>
+    const checkErrors = (errors : FieldErrors, input : string) => {
+        return errors && errors[input]?.message && <Error>{(errors[input]?.message || "").toString()}</Error>
     }
 
     return (

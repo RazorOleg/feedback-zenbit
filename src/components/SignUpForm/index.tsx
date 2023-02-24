@@ -2,13 +2,14 @@ import React, {useEffect} from 'react';
 import { useTranslation } from 'react-i18next';
 import {NavLink, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {useForm} from "react-hook-form";
+import {FieldErrors, useForm} from "react-hook-form";
 import {toast, ToastContainer} from 'react-toastify';
 import {AuthForm, AuthFullNameTitle, AuthInput,
-    AuthLinkToLogin, AuthLogin, AuthSendButton, ContainerForm, Input, SignInLink, Error } from './styles';
+    AuthLinkToLogin, AuthSendButton, ContainerForm, Input, SignInLink, Error, AuthRegistration } from '@signUpForm/styles';
 import {yupResolver} from "@hookform/resolvers/yup";
-import {signUpSchema} from "../../common/schemas";
-import {signUpQuery} from "../../store/auth/sing-up/sign-up.slice";
+import {signUpSchema} from "@common/schemas";
+import {signUpQuery} from "@store/auth/sign-up/sign-up.slice";
+import {IResponse, ISignUp} from "@signUpForm/type";
 
 function SignUpForm() {
     const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function SignUpForm() {
         handleSubmit,
         formState: { errors },
         setValue
-    } = useForm<any>({
+    } = useForm<ISignUp>({
         mode: 'onChange',
         defaultValues: {
             email: '',
@@ -33,8 +34,8 @@ function SignUpForm() {
         register('confirmPassword');
     }, []);
 
-    const onSubmit = (data: any) => {
-        dispatch(signUpQuery(data as any)).then((res: any) => {
+    const onSubmit = (data: ISignUp) => {
+        dispatch(signUpQuery(data as ISignUp)).then((res: IResponse) => {
             if (!res.error){
                 navigate('/');
             }
@@ -46,14 +47,14 @@ function SignUpForm() {
         });
     };
 
-    const checkErrors = (errors : any, input : any) => {
-        return errors && errors[input]?.message && <Error>{errors[input]?.message.toString()}</Error>
+    const checkErrors = (errors : FieldErrors, input : string) => {
+        return errors && errors[input]?.message && <Error>{(errors[input]?.message || "").toString()}</Error>
     }
     return (
         <ContainerForm>
             <AuthForm>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                <AuthLogin>{t("Auth.registration")}</AuthLogin>
+                <AuthRegistration>{t("Auth.registration")}</AuthRegistration>
                 <AuthInput>
                     <>
                     <AuthFullNameTitle>{t("Auth.email")}</AuthFullNameTitle>

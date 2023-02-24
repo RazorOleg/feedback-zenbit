@@ -1,16 +1,16 @@
 import React from 'react';
-import {Container, ContainerImage, MainContentButton, MainContentMessage, MainContentTitle} from './styles';
-import {t} from "i18next";
+import {Container, ContainerImage, MainContentButton, MainContentMessage, MainContentTitle} from '@mainContent/styles';
+import {useTranslation} from "react-i18next";
 
 export default function MainContent() {
+    const { t } = useTranslation();
     return (
         <Container>
             <ContainerImage>
-            <MainContentTitle>The chemical negatively charged</MainContentTitle>
-            <MainContentMessage>Numerous calculations predict, and experiments confirm, that the force field reflects the beam, while
-                the mass defect is not formed. The chemical compound is negatively charged. Twhile the mass defect is
-            </MainContentMessage>
-            <MainContentButton to={"/sign-in"}>{t("Auth.getStarted")}</MainContentButton>
+                <MainContentTitle>{t("MainContent.title")}</MainContentTitle>
+                <MainContentMessage>{t("MainContent.message")}
+                </MainContentMessage>
+                <MainContentButton to={"/sign-in"}>{t("MainContent.getStarted")}</MainContentButton>
             </ContainerImage>
         </Container>
     );

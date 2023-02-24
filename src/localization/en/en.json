@@ -9,17 +9,24 @@
     "logOut": "Log Out",
     "loginTitle": "Login",
     "registration": "Registration",
-    "getStarted": "Get Started",
     "forgotPassword": "Forgot password?",
     "forgotPasswordTitle": "Forgot Password",
     "resetPassword": "Reset Password",
     "haventAnAccount": "Don’t  have an account? ",
-
     "email": "Email",
     "enterEmail": "Enter your email address",
     "password": "Password",
     "confirmPassword": "Confirm password",
     "alreadyExistText": "Already have an account? ",
     "continue": "Continue"
+  },
+  "OpenDeals": {
+    "openDeals": "Open Deals",
+    "loading": "Loading..."
+  },
+  "MainContent": {
+    "title": "The chemical negatively charged",
+    "message": "Numerous calculations predict, and experiments confirm, that the force field reflects the beam, while the mass defect is not formed. The chemical compound is negatively charged. Twhile the mass defect is",
+    "getStarted": "Get Started"
   }
 }

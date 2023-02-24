@@ -6,19 +6,22 @@ import {
     InfoDescContainer,
     InfoPriceContainer, InfoSoldContainer, InfoYieldContainer,
     Title
-} from './styles';
-import {citySelector} from "../../store/city/city.selector";
+} from '@openDeals/styles';
+import {citySelector} from "@store/city/city.selector";
 import {toast} from "react-toastify";
-import {getCityQuery} from "../../store/city/city.slice";
+import {getCityQuery} from "@store/city/city.slice";
+import {useTranslation} from "react-i18next";
+import {ICity, IResponse} from '@openDeals/type';
 
 
 function OpenDeals() {
+    const { t } = useTranslation();
     const city = useSelector(citySelector);
     const dispatch = useDispatch();
-    console.log(city, "cityToken")
+
     useEffect(() => {
         dispatch(getCityQuery()).then(
-            (res: any) => {
+            (res: IResponse) => {
                 if (res.error?.message) {
                     toast.error(res.error.message, {
                         position: toast.POSITION.TOP_CENTER,
@@ -29,11 +32,11 @@ function OpenDeals() {
     }, []);
     return (
         <Container>
-            <Title>Open Deals</Title>
+            <Title>{t("OpenDeals.openDeals")}</Title>
             <FlexDealsContainer>
                 {
-                    city.isLoading ? <h1>Loading...</h1> : city.cities.map(
-                        (city : any) => (<DealContainer>
+                    city.isLoading ? <Title>{t("OpenDeals.openDeals")}</Title> : city.cities.map(
+                        (city : ICity) => (<DealContainer>
                             <ContainerImage city={city.img}>
                                 <InfoContainer>
                                     <DealTitle>{city.title}</DealTitle>

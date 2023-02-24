@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from "../components/Header";
-import MainContent from "../components/MainContent";
-import OpenDeals from "../components/OpenDeals";
+import Header from "@components/Header";
+import MainContent from "@components/MainContent";
+import OpenDeals from "@components/OpenDeals";
 
 function Main() {
     return (

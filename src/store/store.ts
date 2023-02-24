@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import city from './city/city.slice';
 import signIn from "./auth/sign-in/sign-in.slice";
-import signUp from "./auth/sing-up/sign-up.slice";
+import signUp from "./auth/sign-up/sign-up.slice";
 
 
 export const store = configureStore({

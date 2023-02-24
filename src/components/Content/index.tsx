@@ -1,6 +1,6 @@
 import React from 'react';
-import SignInForm from '../SignInForm';
-import {Container, ContainerImage, Image} from "./styles";
+import SignInForm from '@components/SignInForm';
+import {Container, ContainerImage, Image} from "@content/styles";
 
 
 function Content() {
