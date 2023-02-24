@@ -35,7 +35,7 @@ function OpenDeals() {
             <Title>{t("OpenDeals.openDeals")}</Title>
             <FlexDealsContainer>
                 {
-                    city.isLoading ? <Title>{t("OpenDeals.openDeals")}</Title> : city.cities.map(
+                    city.isLoading ? <Title>{t("OpenDeals.loading")}</Title> : city.cities.map(
                         (city : ICity) => (<DealContainer>
                             <ContainerImage city={city.img}>
                                 <InfoContainer>

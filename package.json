@@ -2,7 +2,11 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
   "dependencies": {
+    "@craco/craco": "^7.0.0",
     "@hookform/resolvers": "^2.9.11",
     "@reduxjs/toolkit": "^1.9.2",
     "@testing-library/jest-dom": "^5.16.5",
@@ -30,10 +34,10 @@
     "yup": "^1.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject"
   },
   "eslintConfig": {
     "extends": [
@@ -55,6 +59,7 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
+    "react-app-alias": "^2.2.2",
     "tsconfig-paths-webpack-plugin": "^4.0.0"
   }
 }

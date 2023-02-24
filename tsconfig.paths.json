@@ -1,0 +1,49 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@pages/*": [
+                "./src/pages/*"
+            ],
+            "@components/*": [
+                "./src/components/*"
+            ],
+            "@signUpForm/*": [
+                "./src/components/SignUpForm/*"
+            ],
+            "@signInForm/*": [
+                "./src/components/SignInForm/*"
+            ],
+            "@common/*": [
+                "./src/common/*"
+            ],
+            "@store/*": [
+                "./src/store/*"
+            ],
+            "@api/*": [
+                "./src/api/*"
+            ],
+            "@auth/*": [
+                "./src/api/auth/*"
+            ],
+            "@city/*": [
+                "./src/api/city/*"
+            ],
+            "@content/*": [
+                "./src/components/Content/*"
+            ],
+            "@header/*": [
+                "./src/components/Header/*"
+            ],
+            "@mainContent/*": [
+                "./src/components/MainContent/*"
+            ],
+            "@openDeals/*": [
+                "./src/components/OpenDeals/*"
+            ],
+            "@localization": [
+                "./src/localization/*"
+            ]
+        }
+    }
+}
