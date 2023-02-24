@@ -39,7 +39,7 @@ export const Input = styled.input`
     border-radius: 5px;
     height: 48px;
     background-color: #E0E0E0;
-    text-indent: 10px;
+    text-indent: 15px;
 `
 
 export const AuthRegistration = styled.div`
